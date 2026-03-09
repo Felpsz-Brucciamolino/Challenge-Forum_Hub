@@ -20,7 +20,7 @@ public class CursoController {
     public void cadastrar(@RequestBody @Valid DadosCadastroCurso dados){
 
         if(repository.existsByNome(dados.nome())){
-            throw new RuntimeException("Curso com esse nome já existe");
+            throw new RuntimeException("Já existe um curso com esse nome!!");
         }
 
         repository.save(new Curso(dados));
