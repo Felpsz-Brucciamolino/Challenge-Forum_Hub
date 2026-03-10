@@ -24,7 +24,6 @@ public class SecurityConfiguration {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/login").permitAll()
-                .requestMatchers(HttpMethod.GET, "/autores/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/cursos/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/topicos/**").permitAll()
                 .anyRequest().authenticated())

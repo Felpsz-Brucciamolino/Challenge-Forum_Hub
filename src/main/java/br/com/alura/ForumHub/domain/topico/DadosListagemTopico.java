@@ -11,6 +11,7 @@ public record DadosListagemTopico(
         String curso,
         StatusTopico status,
         LocalDateTime dataCriacao
+
 ) {
 
     public DadosListagemTopico(Topico topico){
@@ -18,10 +19,11 @@ public record DadosListagemTopico(
                 topico.getId(),
                 topico.getTitulo(),
                 topico.getMensagem(),
-                topico.getAutor().getNome(),
+                topico.getAutor().getLogin(),
                 topico.getCurso().getNome(),
                 topico.getStatus(),
                 topico.getDataCriacao()
-                );
+        );
     }
+
 }

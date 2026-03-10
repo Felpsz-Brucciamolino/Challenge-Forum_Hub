@@ -1,6 +1,5 @@
 package br.com.alura.ForumHub.controller;
 
-import br.com.alura.ForumHub.domain.autor.AutorRepository;
 import br.com.alura.ForumHub.domain.curso.CursoRepository;
 import br.com.alura.ForumHub.domain.topico.*;
 import br.com.alura.ForumHub.domain.usuario.UsuarioRepository;
@@ -9,11 +8,11 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @RestController
@@ -24,9 +23,6 @@ public class TopicoController {
     private TopicoRepository repository;
 
     @Autowired
-    private AutorRepository autorRepository;
-
-    @Autowired
     private CursoRepository cursoRepository;
 
     @Autowired
@@ -35,13 +31,17 @@ public class TopicoController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid DadosCadastroTopico dados){
+    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroTopico dados){
 
-        if(repository.existsByTituloAndMensagem(dados.titulo(), dados.mensagem())){
-            throw new RuntimeException("Já existe esse tópico com essa mensagem");
-        }
+        var loginUsuario = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal()
+                .toString();
 
-        var autor = autorRepository.getReferenceById(dados.autorId());
+        var autor = usuarioRepository.findByLogin(loginUsuario)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
         var curso = cursoRepository.getReferenceById(dados.cursoId());
 
         Topico topico = new Topico(
@@ -55,6 +55,8 @@ public class TopicoController {
         );
 
         repository.save(topico);
+
+        return ResponseEntity.status(201).build();
     }
     @GetMapping
     public Page<DadosListagemTopico> listar(Pageable paginacao){
@@ -71,16 +73,45 @@ public class TopicoController {
 
     @PutMapping
     @Transactional
-    public void atualizar(@RequestBody @Valid DadosAtualizacaoTopico dados){
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoTopico dados){
+
         var topico = repository.getReferenceById(dados.id());
+
+        var loginUsuario = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal()
+                .toString();
+
+        if(!topico.getAutor().getLogin().equals(loginUsuario)){
+            throw new RuntimeException("Você não pode alterar esse tópico");
+        }
+
         topico.atualizar(dados);
+
+        return ResponseEntity.ok().build();
     }
 
 
     @DeleteMapping("/{id}")
     @Transactional
-    public void excluir(@PathVariable Long id){
-        repository.deleteById(id);
+    public ResponseEntity excluir(@PathVariable Long id){
+
+        var topico = repository.getReferenceById(id);
+
+        var loginUsuario = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal()
+                .toString();
+
+        if(!topico.getAutor().getLogin().equals(loginUsuario)){
+            throw new RuntimeException("Você não pode apagar esse tópico");
+        }
+
+        repository.delete(topico);
+
+        return ResponseEntity.ok().build();
     }
 
 }

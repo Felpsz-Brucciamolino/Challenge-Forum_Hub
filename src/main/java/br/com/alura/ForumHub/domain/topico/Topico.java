@@ -1,9 +1,12 @@
 package br.com.alura.ForumHub.domain.topico;
 
-import br.com.alura.ForumHub.domain.autor.Autor;
 import br.com.alura.ForumHub.domain.curso.Curso;
+import br.com.alura.ForumHub.domain.usuario.Usuario;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -30,8 +33,8 @@ public class Topico {
     private LocalDateTime dataCriacao;
 
     @ManyToOne
-    @JoinColumn(name = "autor_id")
-    private Autor autor;
+    @JoinColumn(name = "usuario_id")
+    private Usuario autor;
 
     @ManyToOne
     @JoinColumn(name = "curso_id")
