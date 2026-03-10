@@ -81,7 +81,7 @@ http://localhost:8080
 ### Criar uma pasta e abrir no IntelliJ
 
 <p align="center">
-<img src="docs/abrindo-pasta.png" width="800">
+<img src="docs/abrindo-pasta.jpeg" width="800">
 </p>
 
 ---
@@ -93,7 +93,7 @@ Abra o terminal do IntelliJ e execute:
 git clone git@github.com:Felpsz-Brucciamolino/Challenge-Forum_Hub.git
 
 <p align="center">
-<img src="docs/clonando_repositorio.png" width="800">
+<img src="docs/clonando_repositorio.jpeg" width="800">
 </p>
 
 ---
@@ -101,7 +101,7 @@ git clone git@github.com:Felpsz-Brucciamolino/Challenge-Forum_Hub.git
 ### Abrir o repositório clonado
 
 <p align="center">
-<img src="docs/abrindo-repositorio-clonado.png" width="800">
+<img src="docs/abrindo-repositorio-clonado.jpeg" width="800">
 </p>
 
 ---
@@ -109,7 +109,7 @@ git clone git@github.com:Felpsz-Brucciamolino/Challenge-Forum_Hub.git
 ### Criar banco de dados
 
 <p align="center">
-<img src="docs/criando-db-no-repositorio.png" width="800">
+<img src="docs/criando-db-no-repositorio.jpeg" width="800">
 </p>
 
 ---
@@ -117,7 +117,7 @@ git clone git@github.com:Felpsz-Brucciamolino/Challenge-Forum_Hub.git
 ### Usar o banco criado
 
 <p align="center">
-<img src="docs/lembre-de-usar-o-banco.png" width="800">
+<img src="docs/lembre-de-usar-o-banco.jpeg" width="800">
 </p>
 
 ---
@@ -127,7 +127,7 @@ git clone git@github.com:Felpsz-Brucciamolino/Challenge-Forum_Hub.git
 Abra a classe **ForumHubApplication** e execute.
 
 <p align="center">
-<img src="docs/abra-ForumHubApplication.png" width="800">
+<img src="docs/abra-ForumHubApplication.jpeg" width="800">
 </p>
 
 ---
@@ -147,7 +147,7 @@ Siga o passo a passo abaixo para testar os endpoints.
 Primeiro faça login no Postman para trazer as importações.
 
 <p align="center">
-<img src="docs/login-postman-importando-colecoes.png" width="800">
+<img src="docs/login-postman-importando-colecoes.jpeg" width="800">
 </p>
 
 ---
@@ -160,7 +160,7 @@ BaseUrl.postman_environment
 ChallengeAlura.postman_collection  
 
 <p align="center">
-<img src="docs/importando-arquivos.png" width="800">
+<img src="docs/importando-arquivos.jpeg" width="800">
 </p>
 
 ---
@@ -171,7 +171,7 @@ Acesse **Pegar Token** dentro da pasta **Login** no Postman.
 Coloque um usuário válido e clique em **Send**.
 
 <p align="center">
-<img src="docs/pegar-token.png" width="800">
+<img src="docs/pegar-token.jpeg" width="800">
 </p>
 
 ---
@@ -181,7 +181,7 @@ Coloque um usuário válido e clique em **Send**.
 Cole o token copiado em **Authorization → Bearer Token**.
 
 <p align="center">
-<img src="docs/criando-cursos.png" width="800">
+<img src="docs/criando-cursos.jpeg" width="800">
 </p>
 
 ---
@@ -194,7 +194,7 @@ Para criar um tópico é necessário:
 - possuir um curso existente  
 
 <p align="center">
-<img src="docs/criando-topicos.png" width="800">
+<img src="docs/criando-topicos.jpeg" width="800">
 </p>
 
 ---
@@ -204,7 +204,7 @@ Para criar um tópico é necessário:
 Não é necessário token para visualizar tópicos ou cursos.
 
 <p align="center">
-<img src="docs/listagem-topicos.png" width="800">
+<img src="docs/listagem-topicos.jpeg" width="800">
 </p>
 
 ---
