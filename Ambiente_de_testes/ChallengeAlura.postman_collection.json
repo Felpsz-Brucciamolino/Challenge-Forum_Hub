@@ -1,0 +1,403 @@
+{
+  "info": {
+    "_postman_id": "9fd43b4f-b3f9-4feb-9ba4-2a7eb6e8dc50",
+    "name": "ChallengeAlura",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52871124",
+    "_collection_link": "https://go.postman.co/collection/52871124-9fd43b4f-b3f9-4feb-9ba4-2a7eb6e8dc50?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Cursos",
+      "item": [
+        {
+          "name": "Criar Cursos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"nome\":\"Spring Boot para iniciantes\",\r\n \"categoria\":\"Java Spring\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listagem Cursos",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Curso Específico",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cursos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cursos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualização de Cursos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"nome\":\"Java e Spring boot para iniciantes\",\r\n    \"categoria\":\"Java Spring\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apagar Cursos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cursos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cursos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Topicos",
+      "item": [
+        {
+          "name": "Criar tópico",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"titulo\":\"Ajuda com migrations\",\r\n \"mensagem\":\"Meu spring security não fica configurado\",\r\n \"cursoId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/topicos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "topicos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Tópicos",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/topicos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "topicos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tópico específico",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/topicos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "topicos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualização de Tópico",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 1,\r\n  \"titulo\": \"Ajuda com migrations\",\r\n  \"mensagem\": \"Era erro de dependência\",\r\n  \"status\": \"RESOLVIDO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/topicos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "topicos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Tópicos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/topicos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "topicos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "Pegar Token",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"login\":\"admin\",\r\n\"senha\":\"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
