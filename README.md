@@ -214,5 +214,5 @@ Não é necessário token para visualizar tópicos ou cursos.
 Apenas o **autor do tópico** pode deletá-lo utilizando o seu próprio token.
 
 <p align="center">
-<img src="docs/deletando-topico.png" width="800">
+<img src="docs/deletando-topico.jpeg" width="800">
 </p>
