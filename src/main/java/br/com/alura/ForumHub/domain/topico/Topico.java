@@ -5,6 +5,8 @@ import br.com.alura.ForumHub.domain.curso.Curso;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "topicos")
 @Getter
@@ -20,6 +22,12 @@ public class Topico {
     private String titulo;
 
     private String mensagem;
+
+    @Enumerated(EnumType.STRING)
+    private StatusTopico status;
+
+    @Column(name = "data_criacao")
+    private LocalDateTime dataCriacao;
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
@@ -39,6 +47,9 @@ public class Topico {
             this.mensagem = dados.mensagem();
         }
 
-    }
+        if(dados.status() != null){
+            this.status = dados.status();
+        }
 
+    }
 }

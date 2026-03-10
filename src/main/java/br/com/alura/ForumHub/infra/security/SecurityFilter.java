@@ -33,18 +33,21 @@ public class SecurityFilter extends OncePerRequestFilter {
 
             var login = tokenService.validarToken(token);
 
-            if(login != null){
-
-                var authentication = new UsernamePasswordAuthenticationToken(
-                        login,
-                        null,
-                        Collections.emptyList()
-                );
-
-                SecurityContextHolder
-                        .getContext()
-                        .setAuthentication(authentication);
+            if(login == null || login.isEmpty()){
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Token inválido ou expirado");
+                return;
             }
+
+            var authentication = new UsernamePasswordAuthenticationToken(
+                    login,
+                    null,
+                    Collections.emptyList()
+            );
+
+            SecurityContextHolder
+                    .getContext()
+                    .setAuthentication(authentication);
         }
 
         filterChain.doFilter(request, response);
