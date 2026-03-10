@@ -1,3 +1,100 @@
+# 🚀 Fórum Hub API
+
+API REST desenvolvida com **Java + Spring Boot** para gerenciamento de tópicos de discussão em um fórum.
+
+Esse projeto foi desenvolvido como parte do último **Challenge** do programa **Oracle Next Education G9 (ONE) Alura**.
+
+A aplicação permite que usuários autenticados criem, visualizem, atualizem e excluam tópicos relacionados a cursos.
+
+---
+
+# 🎯 Objetivo do Projeto
+
+Desenvolver uma **API REST completa**, aplicando conceitos importantes de desenvolvimento backend como:
+
+- Spring Security
+- Validação e Autenticação de dados
+- Autenticação e autorização com **JWT**
+- Persistência de dados com **JPA / Hibernate**
+- Controle de acesso por usuário
+
+A aplicação simula um **fórum da Alura**, onde os alunos criam tópicos dentro de cursos específicos e discutem dúvidas e/ou soluções.
+
+---
+
+# 🚀 Tecnologias
+
+- Java 17+
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- Flyway
+- MySQL
+- Maven
+- JWT (JSON Web Token)
+- Lombok
+- Postman (testes de API)
+
+---
+
+# 📌 Funcionalidades
+
+✔ Autenticação de usuários com JWT  
+
+✔ Criação de tópicos  
+
+✔ Listagem de tópicos com paginação  
+
+✔ Visualização de um tópico específico  
+
+✔ Atualização de tópicos  
+
+✔ Exclusão de tópicos  
+
+✔ Associação de tópicos com cursos  
+
+✔ Controle de autorização (somente o autor pode alterar ou deletar seu tópico)
+
+---
+
+# 📏 Regras de Negócio
+
+- Apenas **usuários autenticados** podem criar tópicos.
+- Cada tópico possui:
+  - título
+  - mensagem
+  - curso
+  - autor
+  - data de criação
+- A **data de criação é gerada automaticamente pelo sistema**.
+- Apenas **o autor do tópico pode atualizar ou excluir seu próprio tópico**.
+- Cada tópico está **associado a um curso**.
+
+---
+
+# 📂 Estrutura do Projeto
+
+```
+📦 Challenge-Forum_Hub
+ ┣ 📂 src
+ ┃ ┣ 📂 main
+ ┃ ┃ ┣ 📂 java
+ ┃ ┃ ┃ ┗ br/com/alura/forumhub
+ ┃ ┃ ┃   ┣ 📂 controller
+ ┃ ┃ ┃   ┣ 📂 domain
+ ┃ ┃ ┃   ┗ 📂 infra
+ ┃ ┃ ┗ 📂 resources
+ ┣ 📂 docs
+ ┃ ┗ 📸 imagens utilizadas no README
+ ┣ 📂 Ambiente_de_testes
+ ┃ ┣ 📦 ChallengeAlura.postman_collection
+ ┃ ┗ 📦 BaseUrl.postman_environment
+ ┣ 📜 pom.xml
+ ┗ 📜 README.md
+```
+
+---
+
 # ⚙️ Aplicando na sua máquina
 
 ## 1️⃣ Clonar o repositório
@@ -216,3 +313,21 @@ Apenas o **autor do tópico** pode deletá-lo utilizando o seu próprio token.
 <p align="center">
 <img src="docs/deletando-topico.jpeg" width="800">
 </p>
+
+---
+
+# 👨‍💻 Autor
+
+Desenvolvido por **Felipe Brusamolin** durante o programa **Oracle Next Education G9 (ONE)**.
+
+---
+
+# Agradecimentos
+
+Gostaria de agradecer ao programa **ONE** pela oportunidade de aprendizado e crescimento durante toda essa jornada de 8 meses.
+
+Grande parte do conhecimento que possuo hoje em programação foi construída e desenvolvida graças aos conteúdos, desafios e suporte oferecidos pelo programa e pela Alura em si.
+
+Sem tal oportunidade, provavelmente eu não teria conseguido desenvolver tão rápido as habilidades que atualmente tenho na área de desenvolvimento de software.
+
+Também agradeço à **Alura** principalmente aos instrutores que ajudaram a tornar essa experiência de aprendizado muito mais rica e divertida.
